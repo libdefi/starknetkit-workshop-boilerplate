@@ -46,10 +46,27 @@ function App() {
   }
 
   const increaseCounter = async() => {
+    try {
+      const contract = new Contract(contractAbi, contractAddress, account);
+      await contract.increment();
+      alert("Counter increased")
 
+    }
+    catch(error) {
+      console.log(error.message)
+    }
   }
 
   const decreaseCounter = async() => {
+    try {
+      const contract = new Contract(contractAbi, contractAddress, account);
+      await contract.decrement();
+      alert("Counter decreased")
+
+    }
+    catch(error) {
+      console.log(error.message)
+    }
 
   }
 
